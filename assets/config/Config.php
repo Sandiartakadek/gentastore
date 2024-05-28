@@ -1,18 +1,14 @@
 <?php
+session_start();
 
-// Konfigurasi database
-$servername = "localhost"; 
-$username = "root"; 
-$password = "";
-$dbname = "coming-soon"; 
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('gentastore', 'users');
 
-// Membuat koneksi ke database
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-// Memeriksa koneksi
 if ($conn->connect_error) {
-  die("Koneksi ke database gagal: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
-
-
 ?>

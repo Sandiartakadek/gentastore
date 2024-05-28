@@ -43,7 +43,7 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Left side: Genta Simbar -->
                 <div class="flex-shrink-0">
-                    <a href="#" class="text-xl font-bold">Genta Store</a>
+                    <a href="../index.php" class="text-xl font-bold">Genta Store</a>
                 </div>
                 <!-- Middle: Navigation Links -->
                 <div class="hidden md:block">
