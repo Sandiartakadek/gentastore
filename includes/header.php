@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +11,9 @@
     <link rel="stylesheet" type="text/tailwindcss" href=".././assets/css/styles.css">
 </head>
 <style>
-
     body {
-    font-family: 'Open Sans', sans-serif;
-    scroll-behavior: smooth;
+        font-family: 'Open Sans', sans-serif;
+        scroll-behavior: smooth;
     }
 
     .hero-text {
@@ -32,7 +32,27 @@
         width: 270px;
     }
 
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .items-scrollbar::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+        background-color: transparent;
+    }
+
+    .items-scrollbar::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #ccc;
+    }
 </style>
+
 <body class="bg-gray-100 text-black">
     <!-- Navbar start -->
     <nav class="bg-white shadow-lg fixed top-0 w-full z-50">
@@ -55,7 +75,8 @@
                 </div>
                 <!-- Right side: Login -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="views/login.php" class="bg-transparent hover:bg-green-500 text-black font-extralight hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
+                    <a href="views/login.php"
+                        class="bg-transparent hover:bg-green-500 text-black font-extralight hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
                         Login or Register
                     </a>
                     <!-- Add more social icons here -->
