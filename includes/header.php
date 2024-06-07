@@ -5,53 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($title) ? $title : 'Genta Store'; ?></title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unna:wght@400;700&display=swap">
-    <link rel="stylesheet" type="text/tailwindcss" href=".././assets/css/styles.css">
+    <link rel="stylesheet" type="text/tailwindcss" href=".././assets/css/output.css">
 </head>
-<style>
-    body {
-        font-family: 'Open Sans', sans-serif;
-        scroll-behavior: smooth;
-    }
-
-    .hero-text {
-        letter-spacing: 10px;
-    }
-
-    .unna-style {
-        font-family: 'Unna', serif;
-    }
-
-    .overlay-text {
-        letter-spacing: 5px;
-    }
-
-    .blog-anchor {
-        width: 270px;
-    }
-
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-
-    .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .items-scrollbar::-webkit-scrollbar {
-        width: 12px;
-        height: 12px;
-        background-color: transparent;
-    }
-
-    .items-scrollbar::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background-color: #ccc;
-    }
-</style>
 
 <body class="bg-gray-100 text-black">
     <!-- Navbar start -->
