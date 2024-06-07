@@ -1,5 +1,5 @@
 <?php
-$title = "Dashboard Admin";
+$title = "Genta Store - Dashboard Admin";
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ $title = "Dashboard Admin";
         </div>
         <div class="flex items-center">
             <!-- Image Profile Admin -->
-            <img src="path/to/image.jpg" alt="Profile Admin" class="w-10 h-10 rounded-full mr-8">
+            <img src="../assets/images/admin_pic.png" alt="Profile Admin" class="w-10 h-10 rounded-full mr-8">
         </div>
     </nav>
 
