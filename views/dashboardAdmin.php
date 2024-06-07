@@ -28,7 +28,7 @@ $title = "Genta Store - Dashboard Admin";
     </nav>
 
     <!-- Sidebar -->
-    <div class="bg-green-500 text-white h-screen fixed left-0 top-0 w-64 px-8 pt-2">
+    <div class="bg-green-600 text-white h-screen fixed left-0 top-0 w-64 px-8 pt-2">
         <div class="p-4">
             <h1 class="text-2xl font-bold mb-4 border-b pb-4 inline-block">Genta Store</h1>
             <ul class="pt-7">

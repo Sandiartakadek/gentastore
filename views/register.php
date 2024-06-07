@@ -9,33 +9,33 @@ include '../includes/header.php';
         <form action="../assets/config/Register.php" method="POST" class="space-y-2 px-12 pt-8">
             <div>
                 <label for="nama" class="block text-sm font-medium text-gray-700">Nama</label>
-                <input type="text" id="nama" name="nama" class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" required>
+                <input type="text" id="nama" name="nama" class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm" required>
             </div>
             <div>
                 <label for="notelp" class="block text-sm font-medium text-gray-700">No. Telp</label>
-                <input type="text" id="notelp" name="notelp" class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" required>
+                <input type="text" id="notelp" name="notelp" class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm" required>
             </div>
             <div>
                 <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
-                <input type="text" id="alamat" name="alamat" class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" required>
+                <input type="text" id="alamat" name="alamat" class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm" required>
             </div>
             <div>
                 <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-                <input type="text" id="username" name="username" class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" required>
+                <input type="text" id="username" name="username" class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm" required>
             </div>
             <div>
                 <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" id="password" name="password" class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" required>
+                <input type="password" id="password" name="password" class="mt-1 block w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm" required>
             </div>
             <div class="pt-2">
-                <a href="#" class="block w-full text-center py-1 px-4 bg-green-500 text-white font-semibold rounded-md shadow hover:bg-green-600">
+                <a href="#" class="block w-full text-center py-1 px-4 bg-green-600 text-white font-semibold rounded-md shadow hover:bg-green-600">
                     Register
                 </a>
             </div>
         </form>
         <div class="relative my-4">
             <div class="relative flex justify-center text-sm">
-                <span class="px-2 bg-white text-gray-500">Already have an account?</span><a href="login.php" class="text-green-500 hover:text-green-600">Login</a>
+                <span class="px-2 bg-white text-gray-500">Already have an account?</span><a href="login.php" class="text-green-600 hover:text-green-600">Login</a>
             </div>
         </div>
     </div>

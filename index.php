@@ -32,7 +32,7 @@ include 'includes/header.php';
                                 INDOOR <br> PLANTS
                             </h5>
                         </div>
-                        <a href="#" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
+                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
                             Shop Now
                         </a>
                     </div>
@@ -47,7 +47,7 @@ include 'includes/header.php';
                                 AIR PURIFYING <br> PLANTS
                             </h5>
                         </div>
-                        <a href="#" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
+                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
                             Shop Now
                         </a>
                     </div>
@@ -62,7 +62,7 @@ include 'includes/header.php';
                                 FLOWERING <br> PLANTS
                             </h5>
                         </div>
-                        <a href="#" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
+                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
                             Shop Now
                         </a>
                     </div>
@@ -84,7 +84,7 @@ include 'includes/header.php';
                     <img src="assets/images/blog-1.png" alt="Blog 1" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 flex items-center justify-center flex-col text-center text-white">
                         <h5 class="text-xl font-extralight mb-4">How to take care of your Platycerium</h5>
-                        <a href="#" class="blog-anchor bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-block">Read</a>
+                        <a href="#" class="blog-anchor bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-block">Read</a>
                     </div>
                 </div>
 
@@ -93,7 +93,7 @@ include 'includes/header.php';
                     <img src="assets/images/blog-2.png" alt="Blog 2" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 flex items-center justify-center flex-col text-center text-white">
                         <h3 class="text-xl font-extralight mb-4">See news about your Platycerium</h3>
-                        <a href="#" class="blog-anchor bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-block">Read</a>
+                        <a href="#" class="blog-anchor bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-block">Read</a>
                     </div>
                 </div>
             </div>
@@ -113,7 +113,7 @@ include 'includes/header.php';
                         <h3 class="text-xl font-bold mb-2">Product 1</h3>
                         <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
                         <div class="flex justify-center">
-                            <a href="#" class="bg-green-500 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
+                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ include 'includes/header.php';
                         <h3 class="text-xl font-bold mb-2">Product 2</h3>
                         <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
                         <div class="flex justify-center">
-                            <a href="#" class="bg-green-500 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
+                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -137,7 +137,7 @@ include 'includes/header.php';
                         <h3 class="text-xl font-bold mb-2">Product 3</h3>
                         <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
                         <div class="flex justify-center">
-                            <a href="#" class="bg-green-500 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
+                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -149,7 +149,7 @@ include 'includes/header.php';
                         <h3 class="text-xl font-bold mb-2">Product 4</h3>
                         <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
                         <div class="flex justify-center">
-                            <a href="#" class="bg-green-500 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
+                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -170,7 +170,7 @@ include 'includes/header.php';
                         <h3 class="text-xl font-bold mb-2">Product 1</h3>
                         <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
                         <div class="flex justify-center">
-                            <a href="#" class="bg-green-500 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
+                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -182,7 +182,7 @@ include 'includes/header.php';
                         <h3 class="text-xl font-bold mb-2">Product 2</h3>
                         <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
                         <div class="flex justify-center">
-                            <a href="#" class="bg-green-500 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
+                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ include 'includes/header.php';
                         <h3 class="text-xl font-bold mb-2">Product 3</h3>
                         <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
                         <div class="flex justify-center">
-                            <a href="#" class="bg-green-500 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
+                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
                         </div>
                     </div>
                 </div>
@@ -206,7 +206,7 @@ include 'includes/header.php';
                         <h3 class="text-xl font-bold mb-2">Product 4</h3>
                         <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
                         <div class="flex justify-center">
-                            <a href="#" class="bg-green-500 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
+                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
                         </div>
                     </div>
                 </div>

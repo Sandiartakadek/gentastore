@@ -41,7 +41,7 @@
             <a href="#" class="bg-transparent border border-gray-700 text-gray-700 hover:bg-gray-100 hover:text-gray-900 font-bold py-1 px-7 rounded focus:outline-none focus:shadow-outline mx-2" type="button">
                 Cancel
             </a>
-            <a href="#" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-7 rounded focus:outline-none focus:shadow-outline mx-2" type="button">
+            <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-7 rounded focus:outline-none focus:shadow-outline mx-2" type="button">
                 Save
             </a>
         </div>

@@ -9,14 +9,14 @@ include '../includes/header.php';
         <form action="#" method="POST" class="space-y-4 pt-10 px-12">
             <div>
                 <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-                <input type="text" id="username" name="username" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" required>
+                <input type="text" id="username" name="username" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm" required>
             </div>
             <div>
                 <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" id="password" name="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" required>
+                <input type="password" id="password" name="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm" required>
             </div>
             <div class="pt-3">
-                <a href="#" class="block w-full text-center py-2 px-4  bg-green-500 text-white font-semibold rounded-md shadow hover:bg-green-600">
+                <a href="#" class="block w-full text-center py-2 px-4  bg-green-600 text-white font-semibold rounded-md shadow hover:bg-green-600">
                     Login
                 </a>
             </div>
@@ -30,7 +30,7 @@ include '../includes/header.php';
             </div>
         </div>
         <div class="mx-12 pb-8">
-            <a href="register.php" class="block w-full text-center py-2 px-4 mb-5 bg-transparent text-black font-semibold rounded-md border-2 border-green-500 shadow hover:bg-gray-100">
+            <a href="register.php" class="block w-full text-center py-2 px-4 mb-5 bg-transparent text-black font-semibold rounded-md border-2 border-green-600 shadow hover:bg-gray-100">
                 Register
             </a>
         </div>
