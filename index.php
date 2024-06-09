@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($title) ? $title : 'Genta Store'; ?></title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unna:wght@400;700&display=swap">
-    <link rel="stylesheet" href="./assets/css/output.css">
-</head>
+if (isset($_SESSION['login_success'])) {
+    echo '<script>alert("Login berhasil. Selamat datang, ' . $_SESSION['username'] . '!");</script>';
+    unset($_SESSION['login_success']);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,12 +39,17 @@
                         <a href="#" class="text-lg hover:text-gray-700">Contact</a>
                     </div>
                 </div>
-                <!-- Right side: Login -->
+                <!-- Right side: Login or Logout -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="views/login.php"
-                        class="bg-transparent hover:bg-green-600 text-black font-extralight hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
-                        Login or Register
-                    </a>
+                    <?php
+                    if (isset($_SESSION['user_id'])) {
+                        // Pengguna sudah login, tampilkan button Logout
+                        echo '<a href="assets/config/logout.php" class="bg-transparent hover:bg-green-600 text-black font-extralight hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">Logout</a>';
+                    } else {
+                        // Pengguna belum login, tampilkan button Login dan Register
+                        echo '<a href="views/login.php" class="bg-transparent hover:bg-green-600 text-black font-extralight hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">Login or Register</a>';
+                    }
+                    ?>
                     <!-- Add more social icons here -->
                 </div>
             </div>

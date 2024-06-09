@@ -1,12 +1,10 @@
 <?php
-session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "gentadb";
 
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('gentastore', 'users');
-
-$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

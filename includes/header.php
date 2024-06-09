@@ -32,11 +32,13 @@
                 </div>
                 <!-- Right side: Login -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="views/login.php"
+                    <!-- <a href="views/login.php"
                         class="bg-transparent hover:bg-green-500 text-black font-extralight hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">
                         Login or Register
+                    </a> -->
+                    <a>
+                        
                     </a>
-                    <!-- Add more social icons here -->
                 </div>
             </div>
         </div>
