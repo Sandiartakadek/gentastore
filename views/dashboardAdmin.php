@@ -66,13 +66,30 @@ $title = "Genta Store - Dashboard Admin";
                 <!-- Content for current orders goes here -->
                 <h2 class="text-xl font-bold mb-4">Current Orders</h2>
                 <div class="order bg-gray-100 p-4 rounded-lg">
-                    <p class="text-gray-700">Order ID: #12345</p>
-                    <p class="text-gray-700">Customer: John Doe</p>
-                    <p class="text-gray-700">Items: Product A, Product B, Product C</p>
-                    <p class="text-gray-700">Total: $500</p>
-                    <p class="text-gray-700">Status: Processing</p>
-                    <p class="text-gray-700">Shipping Address: 123 Main St, Anytown, USA</p>
-                    <!-- Add more content as needed -->
+                    <!-- Data table -->
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Order ID</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Customer</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Items</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Total</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Status</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Shipping Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 px-4 border-b border-gray-200">#12345</td>
+                                <td class="py-2 px-4 border-b border-gray-200">John Doe</td>
+                                <td class="py-2 px-4 border-b border-gray-200">Product A, Product B, Product C</td>
+                                <td class="py-2 px-4 border-b border-gray-200">$500</td>
+                                <td class="py-2 px-4 border-b border-gray-200">Processing</td>
+                                <td class="py-2 px-4 border-b border-gray-200">123 Main St, Anytown, USA</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

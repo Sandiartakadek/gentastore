@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../assets/css/output.css">
 </head>
 
+
 <body class="bg-gray-100 text-black">
     <!-- Navbar start -->
     <nav class="bg-white shadow-lg fixed top-0 w-full z-50">
