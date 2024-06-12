@@ -26,7 +26,7 @@
                 <!-- Middle: Navigation Links -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-16">
-                        <a href="#" class="text-lg hover:text-gray-700">Home</a>
+                        <a href="../index.php" class="text-lg hover:text-gray-700">Home</a>
                         <a href="#" class="text-lg hover:text-gray-700">Product</a>
                         <a href="#" class="text-lg hover:text-gray-700">Contact</a>
                     </div>
