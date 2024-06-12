@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $role = 'user'; // Mengatur peran default
 
     // Mengecek apakah username sudah digunakan
-    $check_username = $conn->prepare("SELECT id FROM user_management WHERE username = ?");
+    $check_username = $conn->prepare("SELECT user_id FROM user WHERE username = ?");
     $check_username->bind_param("s", $username);
     $check_username->execute();
     $check_username->store_result();
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Username sudah digunakan.";
     } else {
         // Memasukkan data ke database dengan peran default
-        $insert_user = $conn->prepare("INSERT INTO user_management (name, phone, alamat, username, password, role) VALUES (?, ?, ?, ?, ?, ?)");
+        $insert_user = $conn->prepare("INSERT INTO user (name, phone, alamat, username, password, role) VALUES (?, ?, ?, ?, ?, ?)");
         $insert_user->bind_param("ssssss", $nama, $phone, $alamat, $username, $hashed_password, $role);
 
         if ($insert_user->execute()) {

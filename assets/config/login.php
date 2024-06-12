@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Mempersiapkan dan mengikat
-    $stmt = $conn->prepare("SELECT id, username, password FROM user_management WHERE username = ?");
+    $stmt = $conn->prepare("SELECT user_id, username, password FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
