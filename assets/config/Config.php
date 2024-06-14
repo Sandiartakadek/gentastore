@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "gentadb";
+$dbname = "gentastoredb";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

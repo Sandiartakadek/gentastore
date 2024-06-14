@@ -1,5 +1,6 @@
 <?php
 $title = "Genta Store - Dashboard Admin";
+include '../assets/config/views.php'
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +14,7 @@ $title = "Genta Store - Dashboard Admin";
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unna:wght@400;700&display=swap">
     <link rel="stylesheet" href=".././assets/css/styles.css">
 </head>
+
 <body class="bg-gray-100">
 
     <!-- Navbar -->
@@ -41,24 +43,6 @@ $title = "Genta Store - Dashboard Admin";
     <div class="mt-16 ml-64 mr-12 p-4 pt-12 pl-16">
         <!-- Isi konten website -->
         <h1 class="text-2xl font-bold mb-8">Welcome, Admin!</h1>
-        
-        <!-- Single Statistics Card -->
-        <div class="bg-white shadow-lg rounded-lg py-12 text-center mb-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                    <h2 class="text-4xl font-bold text-gray-800">120</h2>
-                    <p class="text-gray-600">Products Sold</p>
-                </div>
-                <div>
-                    <h2 class="text-4xl font-bold text-gray-800">75</h2>
-                    <p class="text-gray-600">Orders</p>
-                </div>
-                <div>
-                    <h2 class="text-4xl font-bold text-gray-800">150</h2>
-                    <p class="text-gray-600">Customers</p>
-                </div>
-            </div>
-        </div>
 
         <!-- Current Orders Section -->
         <div>
@@ -71,23 +55,37 @@ $title = "Genta Store - Dashboard Admin";
                         <thead>
                             <tr>
                                 <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Order ID</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Customer</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Items</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Total</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Status</th>
-                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Shipping Address</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">User ID</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Username</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Product Name</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Quantity</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Item Price</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Total Price</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">Order Date</th>
+                                <th class="py-2 px-4 bg-gray-200 text-left text-sm font-bold text-gray-700">alamat</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="py-2 px-4 border-b border-gray-200">#12345</td>
-                                <td class="py-2 px-4 border-b border-gray-200">John Doe</td>
-                                <td class="py-2 px-4 border-b border-gray-200">Product A, Product B, Product C</td>
-                                <td class="py-2 px-4 border-b border-gray-200">$500</td>
-                                <td class="py-2 px-4 border-b border-gray-200">Processing</td>
-                                <td class="py-2 px-4 border-b border-gray-200">123 Main St, Anytown, USA</td>
-                            </tr>
-                            <!-- Add more rows as needed -->
+                            <?php
+                            // Loop through hasil query untuk menampilkan data
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td class='py-2 px-4 border-b border-gray-200'>" . $row['order_id'] . "</td>";
+                                    echo "<td class='py-2 px-4 border-b border-gray-200'>" . $row['user_id'] . "</td>";
+                                    echo "<td class='py-2 px-4 border-b border-gray-200'>" . $row['username'] . "</td>";
+                                    echo "<td class='py-2 px-4 border-b border-gray-200'>" . $row['product_name'] . "</td>";
+                                    echo "<td class='py-2 px-4 border-b border-gray-200'>" . $row['quantity'] . "</td>";
+                                    echo "<td class='py-2 px-4 border-b border-gray-200'>" . $row['item_price'] . "</td>";
+                                    echo "<td class='py-2 px-4 border-b border-gray-200'>" . $row['total_price'] . "</td>";
+                                    echo "<td class='py-2 px-4 border-b border-gray-200'>" . $row['order_date'] . "</td>";
+                                    echo "<td class='py-2 px-4 border-b border-gray-200'>" . $row['alamat'] . "</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='6'>No orders found</td></tr>";
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -97,3 +95,8 @@ $title = "Genta Store - Dashboard Admin";
 
 </body>
 </html>
+
+<?php
+$conn->close();
+
+?>
