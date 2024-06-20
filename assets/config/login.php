@@ -7,11 +7,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Mempersiapkan dan mengikat
-    $stmt = $conn->prepare("SELECT user_id, username, password FROM users WHERE username = ?");
+    $stmt = $conn->prepare("SELECT user_id, username, password, role FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($id, $username, $stored_password);
+    $stmt->bind_result($id, $username, $stored_password, $role);
 
     if ($stmt->num_rows > 0) {
         $stmt->fetch();
@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Password benar, simpan informasi pengguna ke session
             $_SESSION['user_id'] = $id;
             $_SESSION['username'] = $username;
+            $_SESSION['role'] = $role; // Tambahkan ini untuk menyimpan peran pengguna
             $_SESSION['login_success'] = true;
             header("Location: ../../index.php");
         } else {
@@ -34,5 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $conn->close();
+
 
 ?>

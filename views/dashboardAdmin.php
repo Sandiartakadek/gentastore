@@ -1,7 +1,27 @@
 <?php
+session_start();
+
+// masih eroooooooor
+
+// Periksa apakah pengguna sudah login atau belum
+if (!isset($_SESSION['user_id'])) {
+    // Jika belum, arahkan ke halaman login dan tampilkan alert
+    echo "<script>alert('Anda harus login untuk mengakses halaman ini'); window.location.href='login.php';</script>";
+    exit;
+}
+
+// Periksa apakah peran pengguna adalah admin
+if ($_SESSION['role'] !== 'admin') {
+    // Jika bukan admin, arahkan ke halaman sebelumnya dan tampilkan alert
+    echo "<script>alert('Anda tidak memiliki izin untuk mengakses halaman ini'); window.history.back();</script>";
+    exit;
+}
+
 $title = "Genta Store - Dashboard Admin";
-include '../assets/config/views.php'
+include '../assets/config/views.php';
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
