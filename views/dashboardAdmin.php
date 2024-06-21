@@ -1,27 +1,10 @@
 <?php
 session_start();
 
-// masih eroooooooor
-
-// Periksa apakah pengguna sudah login atau belum
-if (!isset($_SESSION['user_id'])) {
-    // Jika belum, arahkan ke halaman login dan tampilkan alert
-    echo "<script>alert('Anda harus login untuk mengakses halaman ini'); window.location.href='login.php';</script>";
-    exit;
-}
-
-// Periksa apakah peran pengguna adalah admin
-if ($_SESSION['role'] !== 'admin') {
-    // Jika bukan admin, arahkan ke halaman sebelumnya dan tampilkan alert
-    echo "<script>alert('Anda tidak memiliki izin untuk mengakses halaman ini'); window.history.back();</script>";
-    exit;
-}
 
 $title = "Genta Store - Dashboard Admin";
 include '../assets/config/views.php';
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +38,13 @@ include '../assets/config/views.php';
             <h1 class="text-2xl font-bold mb-4 border-b pb-4 inline-block">Genta Store</h1>
             <ul class="pt-7">
                 <li class="mb-2"><a href="#" class="hover:text-gray-300">Customers</a></li>
+                <li class="mb-2 mt-6"><a><button onclick="window.print()">Cetak Laporan</a></li>
+
+                <script>
+                    function printPage() {
+                        window.print();
+                    }
+                </script>
             </ul>
         </div>
     </div>
@@ -103,7 +93,7 @@ include '../assets/config/views.php';
                                     echo "</tr>";
                                 }
                             } else {
-                                echo "<tr><td colspan='6'>No orders found</td></tr>";
+                                echo "<tr><td colspan='9'>No orders found</td></tr>";
                             }
                             ?>
                         </tbody>
@@ -118,5 +108,4 @@ include '../assets/config/views.php';
 
 <?php
 $conn->close();
-
 ?>
