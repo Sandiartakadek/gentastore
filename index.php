@@ -1,10 +1,16 @@
 <?php
 session_start();
+include 'assets/config/Config.php';
 
 if (isset($_SESSION['login_success'])) {
-    echo '<script>alert("Login berhasil. Selamat datang, ' . $_SESSION['username'] . '!");</script>';
+    echo '<script>alert("Login berhasil. Selamat datang, ' . $_SESSION['name'] . '!");</script>';
     unset($_SESSION['login_success']);
 }
+// fetch products
+$stmt = $conn->prepare('SELECT product_name, price, product_image FROM products');
+$stmt->execute();
+$result = $stmt->get_result();
+$stmt->close();
 ?>
 
 <!DOCTYPE html>
@@ -41,10 +47,24 @@ if (isset($_SESSION['login_success'])) {
                 </div>
                 <!-- Right side: Login or Logout -->
                 <div class="hidden md:flex items-center space-x-4">
+                    
                     <?php
                     if (isset($_SESSION['user_id'])) {
                         // Pengguna sudah login, tampilkan button Logout
-                        echo '<a href="assets/config/logout.php" class="bg-transparent hover:bg-green-600 text-black font-extralight hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">Logout</a>';
+                        // echo '<a href="assets/config/logout.php" class="bg-transparent hover:bg-green-600 text-black font-extralight hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">Logout</a>';
+                    ?>
+                        <!-- profile.php == customer profile page -->
+                        <div class="flex justify-center items-center gap-2">
+                        <a href="views/<?= $_SESSION["role"] == "admin" ? "dashboardAdmin.php" : "profile.php" ?>"><?= $_SESSION["name"] ?></a>
+                        <a href="views/<?= $_SESSION["role"] == "admin" ? "dashboardAdmin.php" : "profile.php" ?>">
+                            <img 
+                                class="<?= $_SESSION["role"] == "admin" ? "w-[45px] h-[45px]" : "w-[45px] h-[45px]" ?>"
+                                src="./assets/images/<?= $_SESSION["role"] == "admin" ? "admin_pic.svg" : "customer_pic.svg"?>"
+                                alt="profile pic"
+                            >
+                        </a>
+                        </div>
+                    <?php
                     } else {
                         // Pengguna belum login, tampilkan button Login dan Register
                         echo '<a href="views/login.php" class="bg-transparent hover:bg-green-600 text-black font-extralight hover:text-white py-2 px-4 border border-black hover:border-transparent rounded">Login or Register</a>';
@@ -73,18 +93,18 @@ if (isset($_SESSION['login_success'])) {
     <!-- Section Best Selling -->
     <section class="bg-gray-100 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="unna-style text-5xl font-bold text-center mb-12 underline">Best Selling</h2>
+            <h2 class="unna-style text-5xl text-mainText font-bold text-center mb-12 underline">Best Selling</h2>
             <div class="flex flex-wrap justify-center gap-8">
                 <!-- Card 1 -->
                 <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
                     <div class="p-4">
                         <div class="relative">
-                            <img src="assets/images/indoor-plants.png" alt="Product 1" class="w-full mb-4 rounded">
+                            <img src="assets/images/products/wandae.webp" alt="Product 1" class="w-[344px] h-[318px] object-cover mb-4 rounded">
                             <h5 class="overlay-text absolute inset-0 flex items-center justify-center text-center text-white text-2xl font-extralight">
-                                INDOOR <br> PLANTS
+                                WANDAE
                             </h5>
                         </div>
-                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
+                        <a href="views/pemesanan.php" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
                             Shop Now
                         </a>
                     </div>
@@ -94,12 +114,12 @@ if (isset($_SESSION['login_success'])) {
                 <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
                     <div class="p-4">
                         <div class="relative">
-                            <img src="assets/images/airpurifyng-plants.png" alt="Product 2" class="w-full mb-4 rounded">
+                            <img src="assets/images/products/grande.webp" alt="Product 2" class="w-[344px] h-[318px] object-cover mb-4 rounded">
                             <h5 class="overlay-text absolute inset-0 flex items-center justify-center text-center text-white text-2xl font-extralight ">
-                                AIR PURIFYING <br> PLANTS
+                                GRANDE
                             </h5>
                         </div>
-                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
+                        <a href="views/pemesanan.php" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
                             Shop Now
                         </a>
                     </div>
@@ -109,12 +129,12 @@ if (isset($_SESSION['login_success'])) {
                 <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
                     <div class="p-4">
                         <div class="relative">
-                            <img src="assets/images/flower-plants.png" alt="Product 3" class="w-full mb-4 rounded">
+                            <img src="assets/images/products/coronarium.webp" alt="Product 3" class="w-[344px] h-[318px] object-cover mb-4 rounded">
                             <h5 class="overlay-text absolute inset-0 flex items-center justify-center text-center text-white text-2xl font-extralight ">
-                                FLOWERING <br> PLANTS
+                                CORONARIUM
                             </h5>
                         </div>
-                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
+                        <a href="views/pemesanan.php" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
                             Shop Now
                         </a>
                     </div>
@@ -127,7 +147,7 @@ if (isset($_SESSION['login_success'])) {
      <!-- Section Blogs -->
      <section class="bg-gray-100 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="unna-style text-5xl font-bold text-center mb-12 underline">Blogs</h2>
+            <h2 class="unna-style text-5xl text-mainText font-bold text-center mb-12 underline">Blogs</h2>
 
             <!-- Blog Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -136,7 +156,7 @@ if (isset($_SESSION['login_success'])) {
                     <img src="assets/images/blog-1.png" alt="Blog 1" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 flex items-center justify-center flex-col text-center text-white">
                         <h5 class="text-xl font-extralight mb-4">How to take care of your Platycerium</h5>
-                        <a href="#" class="blog-anchor bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-block">Read</a>
+                        <a href="https://www.plantsforallseasons.co.uk/blogs/fern-care/a-guide-to-platycerium-fern-care" class="blog-anchor bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-block">Read</a>
                     </div>
                 </div>
 
@@ -144,8 +164,8 @@ if (isset($_SESSION['login_success'])) {
                 <div class="relative">
                     <img src="assets/images/blog-2.png" alt="Blog 2" class="w-full h-64 object-cover">
                     <div class="absolute inset-0 flex items-center justify-center flex-col text-center text-white">
-                        <h3 class="text-xl font-extralight mb-4">See news about your Platycerium</h3>
-                        <a href="#" class="blog-anchor bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-block">Read</a>
+                        <h3 class="text-xl font-extralight mb-4">About Platycerium</h3>
+                        <a href="https://en.wikipedia.org/wiki/Platycerium" class="blog-anchor bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded inline-block">Read</a>
                     </div>
                 </div>
             </div>
@@ -155,56 +175,27 @@ if (isset($_SESSION['login_success'])) {
     <!-- Section Stock and Price -->
     <section class="bg-gray-100 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="unna-style text-5xl font-bold text-center mb-12 underline">Stock and Price</h2>
+            <h2 class="unna-style text-5xl text-mainText font-bold text-center mb-12 underline">Stock and Price</h2>
     
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <?php
+                while ($items = $result->fetch_array()) {
+                    ?>
                 <!-- Card 1 -->
-                <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-                    <img src="assets/images/stock-1.png" alt="Product 1" class="w-full p-4 mb-4">
+                <div class="max-w-sm rounded overflow-hidden drop-shadow-containerShadow bg-white">
+                    <img src="assets/images/<?= $items['product_image'] ?>" alt="Product 1" class="w-full p-4 mb-4">
                     <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">Product 1</h3>
-                        <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
+                        <h3 class="text-xl font-bold mb-2"><?= $items['product_name'] ?></h3>
+                        <p class="text-gray-700 mb-2">
+                            <?= number_format($items['price']); ?> 
+                            <span class="text-red-500"><?= number_format($items['price'] + ($items['price'] * 0.10)); ?></span>
+                        </p>
                         <div class="flex justify-center">
-                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
+                            <a href="views/pemesanan.php" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
                         </div>
                     </div>
                 </div>
-    
-                <!-- Card 2 -->
-                <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-                    <img src="assets/images/stock-2.png" alt="Product 2" class="w-full p-4 mb-4 rounded">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">Product 2</h3>
-                        <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
-                        <div class="flex justify-center">
-                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Card 3 -->
-                <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-                    <img src="assets/images/stock-3.png" alt="Product 3" class="w-full p-4 mb-4 rounded">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">Product 3</h3>
-                        <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
-                        <div class="flex justify-center">
-                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Card 4 -->
-                <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-                    <img src="assets/images/stock-4.png" alt="Product 4" class="w-full p-4 mb-4 rounded">
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2">Product 4</h3>
-                        <p class="text-gray-700 mb-2">$350 <span class="text-red-500">450</span></p>
-                        <div class="flex justify-center">
-                            <a href="#" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </section>
@@ -212,7 +203,7 @@ if (isset($_SESSION['login_success'])) {
     <!-- Section Planters -->
     <section class="bg-gray-100 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="unna-style text-5xl font-bold text-center mb-12 underline">Planters</h2>
+            <h2 class="unna-style text-5xl text-mainText font-bold text-center mb-12 underline">Planters</h2>
     
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Card 1 -->
