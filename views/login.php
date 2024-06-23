@@ -6,8 +6,8 @@ session_start();
 ?>
 
 <div class="bg-gray-100 py-16 mt-16 mb-7 flex justify-center">
-    <div class="bg-white rounded-lg shadow-lg w-full max-w-lg mt-7">
-        <h2 class="unna-style text-4xl font-bold text-center py-4 border-b-2 border-gray-500">Login</h2>
+    <div class="bg-white rounded-lg drop-shadow-containerShadow w-full max-w-lg mt-7">
+        <h2 class="unna-style text-4xl text-mainText font-bold text-center py-4 border-b-2 border-gray-500">Login</h2>
         <?php if (isset($_SESSION['login_error'])): ?>
             <script type="text/javascript">
                 alert("<?php echo $_SESSION['login_error']; ?>");
@@ -24,7 +24,7 @@ session_start();
                 <input type="password" id="password" name="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm" required>
             </div>
             <div class="pt-3">
-                <button type="submit" name="login" class="block w-full text-center py-2 px-4 bg-green-600 text-white font-semibold rounded-md shadow hover:bg-green-600">
+                <button type="submit" name="login" class="block w-full text-center py-2 px-4 bg-green-500 text-white font-semibold rounded-md shadow  hover:scale-[1.005] transition-colors ease duration-150">
                     Login
                 </button>
             </div>
@@ -38,7 +38,7 @@ session_start();
             </div>
         </div>
         <div class="mx-12 pb-8">
-            <a href="register.php" class="block w-full text-center py-2 px-4 mb-5 bg-transparent text-black font-semibold rounded-md border-2 border-green-600 shadow hover:bg-gray-100">
+            <a href="register.php" class="block w-full text-center py-2 px-4 mb-5 bg-transparent text-black font-semibold rounded-md border-2 border-green-600 hover:text-white hover:bg-green-600 transition-colors ease duration-150">
                 Daftar
             </a>
         </div>
