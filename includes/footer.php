@@ -1,3 +1,4 @@
+<?php if (!isset($footer) || $footer == true) { ?>
 <!-- Footer Section -->
     <footer>
         <!-- Layer 1: Main Footer -->
@@ -37,7 +38,7 @@
             </div>
         </div>
     </footer>
-
+<?php } ?>
     
 </body>
 </html>
