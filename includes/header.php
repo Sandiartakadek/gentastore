@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unna:wght@400;700&display=swap">
     <link rel="stylesheet" href="../assets/css/output.css">
-    <?php echo isset($customCSS) ? '<link rel="stylesheet" href=""'.$customCSS.'"">' : '' ?>
+    <?php echo isset($customCSS) ? '<link rel="stylesheet" href="' . $customCSS . '">' : '' ?>
 </head>
 
 
