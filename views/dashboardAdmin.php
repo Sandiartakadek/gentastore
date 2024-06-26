@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 $title = "Genta Store - Dashboard Admin";
 include '../assets/config/views.php';
 ?>
@@ -37,7 +36,6 @@ include '../assets/config/views.php';
         <div class="p-4">
             <h1 class="text-2xl font-bold mb-4 border-b pb-4 inline-block">Genta Store</h1>
             <ul class="pt-7">
-                <li class="mb-2"><a href="#" class="hover:text-gray-300">Customers</a></li>
                 <li class="mb-2 mt-6"><a><button onclick="window.print()">Cetak Laporan</a></li>
 
                 <script>
