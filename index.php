@@ -1,8 +1,9 @@
 <?php
 session_start();
+include 'assets/config/Config.php';
 
 if (isset($_SESSION['login_success'])) {
-    echo '<script>alert("Login berhasil. Selamat datang, ' . $_SESSION['username'] . '!");</script>';
+    echo '<script>alert("Login berhasil. Selamat datang, ' . $_SESSION['name'] . '!");</script>';
     unset($_SESSION['login_success']);
 }
 
@@ -73,6 +74,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                 </div>
                 <!-- Right side: Login or Logout -->
                 <div class="hidden md:flex items-center space-x-4">
+                    
                     <?php
                     if (isset($_SESSION['user_id'])) {
                         // Pengguna sudah login, tampilkan button Logout
@@ -123,18 +125,18 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
     <!-- Section Best Selling -->
     <section class="bg-gray-100 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="unna-style text-5xl font-bold text-center mb-12 underline">Best Selling</h2>
+            <h2 class="unna-style text-5xl text-mainText font-bold text-center mb-12 underline">Best Selling</h2>
             <div class="flex flex-wrap justify-center gap-8">
                 <!-- Card 1 -->
                 <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
                     <div class="p-4">
                         <div class="relative">
-                            <img src="assets/images/indoor-plants.png" alt="Product 1" class="w-full mb-4 rounded">
+                            <img src="assets/images/products/wandae.webp" alt="Product 1" class="w-[344px] h-[318px] object-cover mb-4 rounded">
                             <h5 class="overlay-text absolute inset-0 flex items-center justify-center text-center text-white text-2xl font-extralight">
-                                INDOOR <br> PLANTS
+                                WANDAE
                             </h5>
                         </div>
-                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
+                        <a href="views/pemesanan.php" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
                             Shop Now
                         </a>
                     </div>
@@ -144,12 +146,12 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                 <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
                     <div class="p-4">
                         <div class="relative">
-                            <img src="assets/images/airpurifyng-plants.png" alt="Product 2" class="w-full mb-4 rounded">
+                            <img src="assets/images/products/grande.webp" alt="Product 2" class="w-[344px] h-[318px] object-cover mb-4 rounded">
                             <h5 class="overlay-text absolute inset-0 flex items-center justify-center text-center text-white text-2xl font-extralight ">
-                                AIR PURIFYING <br> PLANTS
+                                GRANDE
                             </h5>
                         </div>
-                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
+                        <a href="views/pemesanan.php" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
                             Shop Now
                         </a>
                     </div>
@@ -159,12 +161,12 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                 <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
                     <div class="p-4">
                         <div class="relative">
-                            <img src="assets/images/flower-plants.png" alt="Product 3" class="w-full mb-4 rounded">
+                            <img src="assets/images/products/coronarium.webp" alt="Product 3" class="w-[344px] h-[318px] object-cover mb-4 rounded">
                             <h5 class="overlay-text absolute inset-0 flex items-center justify-center text-center text-white text-2xl font-extralight ">
-                                FLOWERING <br> PLANTS
+                                CORONARIUM
                             </h5>
                         </div>
-                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
+                        <a href="views/pemesanan.php" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 w-full mt-2 flex items-center justify-center rounded">
                             Shop Now
                         </a>
                     </div>
@@ -177,7 +179,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
      <!-- Section Blogs -->
      <section class="bg-gray-100 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="unna-style text-5xl font-bold text-center mb-12 underline">Blogs</h2>
+            <h2 class="unna-style text-5xl text-mainText font-bold text-center mb-12 underline">Blogs</h2>
 
             <!-- Blog Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">

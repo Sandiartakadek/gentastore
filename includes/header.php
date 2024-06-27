@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unna:wght@400;700&display=swap">
     <link rel="stylesheet" href="../assets/css/output.css">
+    <?php echo isset($customCSS) ? '<link rel="stylesheet" href="' . $customCSS . '">' : '' ?>
 </head>
 
 
 <body class="bg-gray-100 text-black">
     <!-- Navbar start -->
+    <?php if (!isset($nav) || $nav == true) { ?>
     <nav class="bg-white shadow-lg fixed top-0 w-full z-50">
         <!-- Layer 1: barrier -->
         <div class="bg-green-700 py-3"></div>
@@ -44,3 +46,4 @@
             </div>
         </div>
     </nav>
+    <?php } ?>
