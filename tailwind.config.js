@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "mainText": "rgba(52, 52, 52, 0.8)",
+        "mainText": "rgb(52, 52, 52)",
       },
       dropShadow: {
         containerShadow: '0 8px 23px rgba(80, 107, 82, 0.13)',
