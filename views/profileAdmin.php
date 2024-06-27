@@ -30,7 +30,7 @@ include '../includes/header.php';
                 <input type="text" id="noTelp" class="shadow appearance-none border border-gray-700 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
             </div>
             <div class="flex justify-left">
-                <a href="#" class="bg-transparent border border-gray-700 text-gray-700 hover:bg-gray-100 hover:text-gray-900 font-bold py-1 px-7 rounded focus:outline-none focus:shadow-outline mx-2" type="button">
+                <a href="../index.php" class="bg-transparent border border-gray-700 text-gray-700 hover:bg-gray-100 hover:text-gray-900 font-bold py-1 px-7 rounded focus:outline-none focus:shadow-outline mx-2" type="button">
                     Cancel
                 </a>
                 <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-7 rounded focus:outline-none focus:shadow-outline mx-2" type="button">
