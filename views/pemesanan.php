@@ -62,11 +62,11 @@ if (!$_SESSION['user_id']) {
     <!--| Bagian cart |-->
     <div class="w-2/6">
       <div class="w-full py-4 border-b-2 flex justify-center">
-        <h2 class="text-2xl text-mainText font-bold unna-style">Your Cart</h2>
+        <h2 class="text-2xl font-semibold">Your Cart</h2>
       </div>
       <!-- scrollable cart list -->
       <div class="flex flex-col border-b-2">
-        <div class="flex font-bold px-2 pt-1">
+        <div class="flex font-bold px-2 pt-1 text-mainText">
           <p class="w-5/12">NAME</p>
           <p class="w-4/12">PRICE</p>
           <p class="w-2/12">QTY</p>
@@ -81,7 +81,7 @@ if (!$_SESSION['user_id']) {
             foreach ($_SESSION['cart'] as $key => $value) { ?>
               <div class='flex'>
                 <p class='w-5/12'><?= $value['product_name']; ?></p>
-                <p class='w-4/12'>Rp. <?= number_format(($value['price'] * $value['quantity']), 0) ; ?></p>
+                <p class='w-4/12 text-mainText'>Rp. <?= number_format(($value['price'] * $value['quantity']), 0) ; ?></p>
                 <p class='w-2/12'><?= $value['quantity']; ?>
                 </p>
                 <a class='w-1/12' href="pemesanan.php?action=remove&product_id=<?= $value['product_id']; ?>" ]>
@@ -96,7 +96,7 @@ if (!$_SESSION['user_id']) {
           ?>
 
         </div>
-        <div class="flex font-bold p-2">
+        <div class="flex font-bold p-2 text-mainText">
           <p class="w-5/12">TOTAL</p>
           <p class="w-4/12">Rp. <?= number_format($totalPrice, 0); ?></p>
           <p class="w-2/12">
@@ -123,7 +123,7 @@ if (!$_SESSION['user_id']) {
       </div>
 
       <p class="p-2 border-b-2 w-full h-24">
-        <strong>Alamat pemesan:</strong>
+        <strong class="text-mainText">Alamat pemesan:</strong>
         <span>
           <?php
             echo $alamat;
