@@ -6,11 +6,11 @@ $description = $_POST['productDesc'];
 $price = $_POST['productPrice'];
 $stock = $_POST['productStock'];
 
-$target_dir = "../uploads/";
-$target_file = $target_dir . basename($_FILES["productImage"]["name"]);
-move_uploaded_file($_FILES["productImage"]["tmp_name"], $target_file);
+$target_dir = "../uploads/" . basename($_FILES["productImage"]["name"]);
+$upload_name = "uploads/" . basename($_FILES["productImage"]["name"]);
+move_uploaded_file($_FILES["productImage"]["tmp_name"], $target_dir);
 
-$sql = "INSERT INTO products (product_name, description, price, stock, image) VALUES ('$product_name', '$description', '$price', '$stock', '$target_file')";
+$sql = "INSERT INTO products (product_name, description, price, stock, image) VALUES ('$product_name', '$description', '$price', '$stock', '$upload_name')";
 
 session_start(); // Start the session to use session variables
 
