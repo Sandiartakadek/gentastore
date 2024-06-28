@@ -63,7 +63,7 @@
                                 <td class='border px-4 py-2'>{$row['description']}</td>
                                 <td class='border px-4 py-2'>{$row['price']}</td>
                                 <td class='border px-4 py-2'>{$row['stock']}</td>
-                                <td class='border px-4 py-2'><img src='../assets/uploads/{$row['image']}' alt='{$row['product_name']}' class='w-16'></td>
+                                <td class='border px-4 py-2'><img src='../assets/{$row['image']}' alt='{$row['product_name']}' class='w-16'></td>
                                 <td class='border px-4 py-2'>
                                     <button class='bg-yellow-500 text-white py-1 px-3 rounded btnEdit' data-id='{$row['product_id']}'>Edit</button>
                                     <button class='bg-red-500 text-white py-1 px-3 rounded btnDelete' data-id='{$row['product_id']}'>Delete</button>
