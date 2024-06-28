@@ -113,7 +113,7 @@ if ($isLogin == true) {
                     echo '<td class="py-1 px-2 border-b border-x border-gray-200 bg-gray-100">' . $row['item_price'] . '</td>';
                     echo '<td class="py-1 px-2 border-b border-x border-gray-200 bg-gray-100">' . $row['total_price'] . '</td>';
                     echo '<td class="py-1 px-2 border-b border-x border-gray-200 bg-gray-100">' . $row['order_date'] . '</td>';
-                    if ($row['status'] == null) {
+                    if ($row['status'] == 'Pending') {
                       echo '<td class="text-red-600 py-1 px-2 border-b border-x border-gray-200 bg-gray-100">Pending</td>';
                     } else {
                       echo '<td class="text-green-600 py-1 px-2 border-b border-x border-gray-200 bg-gray-100">Completed</td>';
