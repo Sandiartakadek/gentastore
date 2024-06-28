@@ -47,8 +47,7 @@ if (!isset($_SESSION['user_id'])) {
                 Cancel
             </a>
             <button type="submit" name="edit-profile" form="edit-profile"
-                class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-7 rounded focus:outline-none focus:shadow-outline mx-2"
-                type="button">
+                class="bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-7 rounded focus:outline-none focus:shadow-outline mx-2">
                 Save
             </button>
         </div>
