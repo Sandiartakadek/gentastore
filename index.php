@@ -224,7 +224,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                     while($row = $result->fetch_array()) {
                 ?>
                     <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white p-4">
-                        <img src="assets/uploads/<?= $row['image']; ?>" alt="<?= $row["product_name"]; ?>" class="w-full mb-2">
+                        <img src="assets/<?= $row['image']; ?>" alt="<?= $row["product_name"]; ?>" class="w-full mb-2">
                         <div>
                             <h3 class="text-xl font-bold mb-2"><?= $row["product_name"]; ?></h3>
                             <p class="text-gray-700 mb-2">Rp. <?= $row["price"]; ?>&nbsp;&nbsp;<span class="text-red-500">Stock <?= $row["stock"]; ?></span></p>
