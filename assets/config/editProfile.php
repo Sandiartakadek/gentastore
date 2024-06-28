@@ -33,7 +33,11 @@ if (isset($_POST['edit-profile'])) {
     try {
       $stmt = $conn->prepare("UPDATE users SET ". implode(', ', $queryFields) ." WHERE user_id = '".$_SESSION['user_id']."'");
       $stmt->execute();
-      header('Location: ../views/profile.php?edit=success');
+      if ($adminEditProfile === true) {
+        header('Location: profileAdmin.php?edit=success');
+      } else {
+        header('Location: ../views/profile.php?edit=success');
+      }
     } catch(Exception) {
       header('Location: editProfile.php?error=sql');
     }
