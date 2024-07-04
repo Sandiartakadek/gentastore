@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'assets/config/Config.php';
+include 'assets/config/index_buynow.php';
 
 if (isset($_SESSION['login_success'])) {
     echo '<script>alert("Login berhasil. Selamat datang, ' . $_SESSION['name'] . '!");</script>';
@@ -31,11 +32,10 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
     <title><?php echo isset($title) ? $title : 'Genta Store'; ?></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unna:wght@400;700&display=swap">
-    <link rel="stylesheet" href="./assets/css/input.css">
     <link rel="stylesheet" href="./assets/css/output.css">
 </head>
 
-<body class="bg-gray-100 text-black ">
+<body class="bg-gray-100 text-black">
     <!-- Navbar start -->
     <nav class="bg-white shadow-lg fixed top-0 w-full z-50">
         <!-- Layer 1: barrier -->
@@ -55,13 +55,13 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                         <!-- dropdown admin -->
                         <?php if ($isAdmin) : ?>
                         <div class="relative">
-                            <button type="button" class="text-lg text-gray-700 hover:text-gray-900 focus:outline-none">
+                            <button type="button" class="text-lg hover:text-gray-700 focus:outline-none">
                                 Admin
                             </button>
-                            <div class="absolute right-0 mt-2 w-48 bg-white shadow-md rounded-md z-10 hidden">
-                                <a href="views/profileAdmin.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
-                                <a href="views/kelolaProduct.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">product</a>
-                                <a href="views/dashboardAdmin.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">transaksi</a>
+                            <div class="absolute right-0 mt-2 w-48 bg-white drop-shadow-containerShadow rounded-md z-10 hidden">
+                                <a href="views/profileAdmin.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-tr-md rounded-tl-md">Profile</a>
+                                <a href="views/kelolaProduct.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Product</a>
+                                <a href="views/dashboardAdmin.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-br-md rounded-bl-md">Transaksi</a>
                             </div>
                         </div>
                         <?php endif; ?>
@@ -126,7 +126,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                 <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
                     <div class="p-4">
                         <div class="relative">
-                            <img src="assets/images/products/wandae.webp" alt="Product 1" class="w-[344px] h-[318px] object-cover mb-4 rounded">
+                            <img src="assets/uploads/wandai.webp" alt="Product 1" class="w-[344px] h-[318px] object-cover mb-4 rounded">
                             <h5 class="overlay-text absolute inset-0 flex items-center justify-center text-center text-white text-2xl font-extralight">
                                 WANDAE
                             </h5>
@@ -141,7 +141,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                 <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
                     <div class="p-4">
                         <div class="relative">
-                            <img src="assets/images/products/grande.webp" alt="Product 2" class="w-[344px] h-[318px] object-cover mb-4 rounded">
+                            <img src="assets/uploads/grande.webp" alt="Product 2" class="w-[344px] h-[318px] object-cover mb-4 rounded">
                             <h5 class="overlay-text absolute inset-0 flex items-center justify-center text-center text-white text-2xl font-extralight ">
                                 GRANDE
                             </h5>
@@ -156,7 +156,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                 <div class="relative max-w-sm rounded overflow-hidden shadow-lg bg-white">
                     <div class="p-4">
                         <div class="relative">
-                            <img src="assets/images/products/coronarium.webp" alt="Product 3" class="w-[344px] h-[318px] object-cover mb-4 rounded">
+                            <img src="assets/uploads/coronarium.webp" alt="Product 3" class="w-[344px] h-[318px] object-cover mb-4 rounded">
                             <h5 class="overlay-text absolute inset-0 flex items-center justify-center text-center text-white text-2xl font-extralight ">
                                 CORONARIUM
                             </h5>
@@ -206,7 +206,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
     <!-- Section Stock and Price -->
     <section class="bg-gray-100 py-16" id="planters-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="unna-style text-5xl font-bold text-center mb-12 underline">Planters</h2>
+            <h2 class="unna-style text-5xl font-bold text-mainText text-center mb-12 underline">Plants</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <?php
@@ -216,17 +216,24 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        echo '<div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">';
-                        echo '<img src="assets/uploads/' . $row['image'] . '" alt="' . $row["product_name"] . '" class="w-full p-4 mb-4">';
-                        echo '<div class="p-4">';
-                        echo '<h3 class="text-xl font-bold mb-2">' . $row["product_name"] . '</h3>';
-                        echo '<p class="text-gray-700 mb-2">$' . $row["price"] . ' <span class="text-red-500">stock ' . $row["stock"] . '</span></p>';
-                        echo '<div class="flex justify-center">';
-                        echo '<a href="views/pemesanan.php" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</a>';
-                        echo '</div>';
-                        echo '</div>';
-                        echo '</div>';
+                    while($row = $result->fetch_array()) {
+                ?>
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white p-4">
+                        <img src="assets/<?= $row['image']; ?>" alt="<?= $row["product_name"]; ?>" class="w-full mb-2">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2"><?= $row["product_name"]; ?></h3>
+                            <p class="text-gray-700 mb-2">Rp. <?= $row["price"]; ?>&nbsp;&nbsp;<span class="text-red-500">Stock <?= $row["stock"]; ?></span></p>
+                            <div class="flex justify-center">
+                                <form method="POST" action="views/pemesanan.php?product_id=<?= $row['product_id']; ?>" class="w-full">
+                                    <input type="hidden" name="product_name" value="<?= $row['product_name']; ?>"/>
+                                    <input type="hidden" name="price" value="<?= $row['price']; ?>"/>
+                                    <input type="hidden" name="quantity" value="1"/>
+                                    <button type="submit" name="add_to_cart" class="bg-green-600 hover:bg-green-700 w-full text-center text-white font-bold py-2 px-4 rounded">Buy Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <?php
                     }
                 } else {
                     echo "0 hasil";
