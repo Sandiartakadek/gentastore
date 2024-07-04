@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $hashed_password = md5($password); // Menggunakan md5 untuk penyandian kata sandi 
-    $role = 'user'; // Mengatur peran default
+    $role = 'customer'; // Mengatur peran default
 
     // Mengecek apakah username sudah digunakan
     $check_username = $conn->prepare("SELECT user_id FROM users WHERE username = ?");
