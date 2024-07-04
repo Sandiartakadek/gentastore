@@ -8,19 +8,6 @@ if (isset($_SESSION['login_success'])) {
     unset($_SESSION['login_success']);
 }
 
-if (isset($_SESSION['role']) && $_SESSION['role'] === 'customer') {
-    $isNotAdmin = true;
-} else {
-    $isNotAdmin = false;
-}
-
-if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
-    $isAdmin = true;
-} else {
-    $isAdmin = false;
-}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -52,8 +39,9 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                     <div class="ml-10 flex items-baseline space-x-16">
                         <a href="#hero-section" class="text-lg hover:text-gray-700">Home</a>
                         <a href="#planters-section" class="text-lg hover:text-gray-700">Product</a>
+                        <a href="https://wa.me/62881037782128" target="_blank" class="text-lg hover:text-gray-700">Contact</a>
                         <!-- dropdown admin -->
-                        <?php if ($isAdmin) : ?>
+                        <?php if (isset($_SESSION['user_id']) && $_SESSION['role'] == 'admin') { ?>
                         <div class="relative">
                             <button type="button" class="text-lg hover:text-gray-700 focus:outline-none">
                                 Admin
@@ -64,7 +52,11 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                                 <a href="views/dashboardAdmin.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-br-md rounded-bl-md">Transaksi</a>
                             </div>
                         </div>
-                        <?php endif; ?>
+                        <?php } else if (isset($_SESSION['user_id']) && $_SESSION['role']  == 'customer') { ?>
+                            <a type="button" href="views/profile.php" class="text-lg hover:text-gray-700 focus:outline-none cursor-pointer">
+                                Profile
+                            </a>
+                        <?php }; ?>
                     </div>
                 </div>
                 <!-- Right side: Login or Logout -->
