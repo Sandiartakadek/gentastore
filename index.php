@@ -52,11 +52,6 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                     <div class="ml-10 flex items-baseline space-x-16">
                         <a href="#hero-section" class="text-lg hover:text-gray-700">Home</a>
                         <a href="#planters-section" class="text-lg hover:text-gray-700">Product</a>
-                        <a href="#contact-section" class="text-lg hover:text-gray-700">Contact</a>
-                        <!-- navigasi pengguna -->
-                        <?php if ($isNotAdmin) : ?>
-                        <a href="views/profileCustomer.php" class="text-lg hover:text-gray-700">Profile</a>
-                        <?php endif; ?>
                         <!-- dropdown admin -->
                         <?php if ($isAdmin) : ?>
                         <div class="relative">

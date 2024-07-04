@@ -24,7 +24,7 @@ if (!$_SESSION['user_id']) {
             <div class="flex gap-4 overflow-x-auto pb-2 items-scrollbar">
 
               <?php
-              $query = 'SELECT product_id, product_name, price, stock, product_image FROM products';
+              $query = 'SELECT product_id, product_name, price, stock, image FROM products';
               $product_stmt = mysqli_prepare($conn, $query);
               mysqli_stmt_execute($product_stmt);
               $result = mysqli_stmt_get_result($product_stmt);
@@ -32,7 +32,7 @@ if (!$_SESSION['user_id']) {
               while ($products = mysqli_fetch_array($result)) { ?>
 
                 <div class="p-2 bg-white w-44 rounded-lg flex flex-col justify-center flex-shrink-0">
-                  <img src="../assets/images/<?= $products['product_image']; ?>" alt="<?= $products['product_name'] ?>" class="rounded-md w-full h-28 object-cover">
+                  <img src="../assets/uploads/<?= $products['image']; ?>" alt="<?= $products['product_name'] ?>" class="rounded-md w-full h-28 object-cover">
                   <div class="mt-1 mb-1">
                     <h2 class="font-bold"><?= $products['product_name']; ?></h2>
                     <h3 class="text-sm">Stock: <?= $products['stock']; ?></h3>
@@ -51,7 +51,6 @@ if (!$_SESSION['user_id']) {
                 </div>
 
               <?php } mysqli_stmt_close($product_stmt); ?>
-
 
             </div>
           </div>

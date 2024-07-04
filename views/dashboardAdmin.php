@@ -20,21 +20,17 @@ include '../assets/config/views.php';
 <body class="bg-gray-100">
 
     <!-- Navbar -->
-    <nav class="bg-white shadow-lg fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4">
-        <div class="flex items-center">
-            <!-- Logo atau Judul Website -->
-            <h1 class="text-lg font-bold">Genta Store</h1>
-        </div>
+    <nav class="bg-white shadow-lg fixed top-0 left-0 right-0 flex items-center justify-end px-8 py-4">
         <div class="flex items-center">
             <!-- Image Profile Admin -->
-            <img src="../assets/images/admin_pic.png" alt="Profile Admin" class="w-10 h-10 rounded-full mr-8">
+            <img src="../assets/images/admin_pic.svg" alt="Profile Admin" class="w-10 h-10 rounded-full mr-8">
         </div>
     </nav>
 
     <!-- Sidebar -->
     <div class="bg-green-600 text-white h-screen fixed left-0 top-0 w-64 px-8 pt-2">
         <div class="p-4">
-            <h1 class="text-2xl font-bold mb-4 border-b pb-4 inline-block">Genta Store</h1>
+            <a href="../index.php" class="text-2xl font-bold mb-4 border-b pb-4 inline-block">Genta Store</a>
             <ul class="pt-7">
                 <li class="mb-2 mt-6"><a><button onclick="window.print()">Cetak Laporan</a></li>
 
