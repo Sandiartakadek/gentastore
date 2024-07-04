@@ -122,7 +122,7 @@ if ($isLogin == true) {
                     echo '</tr>';
                   }
                 } else {
-                  echo '<tr><td>No orders found</td></tr>';
+                  echo '<tr><td class="px-2" >No orders found</td></tr>';
                 }
                 ?>
               </tbody>
