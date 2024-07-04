@@ -23,11 +23,8 @@ if (!$_SESSION['user_id']) {
         mysqli_stmt_execute($product_stmt);
         $result = mysqli_stmt_get_result($product_stmt);
 
-              <?php
-              $query = 'SELECT product_id, product_name, price, stock, image FROM products';
-              $product_stmt = mysqli_prepare($conn, $query);
-              mysqli_stmt_execute($product_stmt);
-              $result = mysqli_stmt_get_result($product_stmt);
+        $totalProduct = mysqli_num_rows($result);
+      ?>
 
       <div class="flex items-center gap-2 mb-1 mt-2">
         <p class="ml-3 font-semibold flex">Plants</p>
@@ -35,13 +32,12 @@ if (!$_SESSION['user_id']) {
         <p class="font-semibold flex">Total products: <?=  $totalProduct ?></p>
       </div>
 
-                <div class="p-2 bg-white w-44 rounded-lg flex flex-col justify-center flex-shrink-0">
-                  <img src="../assets/uploads/<?= $products['image']; ?>" alt="<?= $products['product_name'] ?>" class="rounded-md w-full h-28 object-cover">
-                  <div class="mt-1 mb-1">
-                    <h2 class="font-bold"><?= $products['product_name']; ?></h2>
-                    <h3 class="text-sm">Stock: <?= $products['stock']; ?></h3>
-                    <h3 class="text-sm">Rp. <?= number_format($products['price'], 0); ?></h3>
-                  </div>
+      <div class="bg-gray-200 mx-3 mb-3 rounded-lg">
+        <div class="w-full p-4">
+          <!--|| Items Container || -->
+          <div class="flex flex-wrap gap-4 overflow-auto no-scrollbar h-[470px]">
+            <?php
+            while ($products = mysqli_fetch_array($result)) { ?>
 
               <div class="p-2 bg-white w-44 rounded-lg flex flex-col justify-center flex-shrink-0">
                 <img src="../assets/<?= $products['image']; ?>" alt="<?= $products['product_name'] ?>" class="rounded-md w-full h-28 object-cover">
@@ -62,9 +58,6 @@ if (!$_SESSION['user_id']) {
               </div>
             <?php } mysqli_stmt_close($product_stmt); ?>
 
-              <?php } mysqli_stmt_close($product_stmt); ?>
-
-            </div>
           </div>
           
         </div>
