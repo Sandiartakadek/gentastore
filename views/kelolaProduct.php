@@ -25,9 +25,10 @@
 
         <!-- Navbar -->
         <nav class="bg-green-500 shadow-lg fixed top-0 left-0 right-0 flex items-center justify-between px-8 py-4">
-            <div class="flex items-center">
+            <div class="flex items-center gap-4">
+                <a href="../index.php" class="text-white bg-green-600 py-1 px-3 rounded-lg">Back</a>
                 <!-- Logo atau Judul Website -->
-                <a href="../index.php" class="text-lg font-bold text-white">Genta Store</a>
+                <p class="text-lg font-semibold text-white">Genta Store</p>
             </div>
             <div class="flex items-center">
                 <!-- Image Profile Admin -->
